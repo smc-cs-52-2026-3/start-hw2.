@@ -24,7 +24,7 @@ int main() {
     if (y == 'y') {
         cout << "Enter the trade-in value of your current vehicle: ";
         cin >> curve;
-        cout << "Enter the amount owe on your current vehicle: ";
+        cout << "Enter the amount owed on your current vehicle: ";
         cin >> amount;
         downPayment = payment + (curve - amount);
     } else if (y == 'n') {
