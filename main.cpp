@@ -12,7 +12,7 @@ int main() {
     double interestRate = 0.0;
     cout << "Enter the vehicle's purchase price: ";
     cin >> price;
-    cout << "Enter the down payment for the vehicle";
+    cout << "Enter the down payment for the vehicle: ";
     cin >> payment;
     cout << "Enter the sales tax on the transaction (for 8.25% tax, enter 8.25): ";
     cin >> tax;
