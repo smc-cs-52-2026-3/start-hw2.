@@ -35,7 +35,7 @@ int main() {
 
     cout << "Your overall down payment is $" << downPayment << endl;
     cout << "Your overall loan amount is $" << loanAmount << endl;
-    cout << "*****************************";
+    cout << "*****************************" << endl;
     cout << "Enter the length of your loan..." << endl;
     cout << " 1: 3 years" << endl;
     cout << " 2: 4 years" << endl;
