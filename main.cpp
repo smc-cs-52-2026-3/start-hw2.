@@ -41,7 +41,7 @@ int main() {
     cout << " 2: 4 years" << endl;
     cout << " 3: 5 years" << endl;
     cout << " 4: 6 years" << endl;
-    cout << "select an option: ";
+    cout << "Select an option: ";
     int option = 0.0;
     cin >> option;
     switch (option) {
