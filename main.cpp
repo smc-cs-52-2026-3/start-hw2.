@@ -1,12 +1,137 @@
-// Copyright (c) 2025 Nathan Greenfield. All rights reserved
-
 #include <iostream>
 #include <cmath>
+using namespace std;
 
-int main()
-{
-    /***************** Your code goes here! *****************/
+int main() {
+    char y = 'n';
+    double price = 0.0;
+    double payment = 0.0;
+    double tax = 0.0;
+    double amount = 0.0;
+    double curve = 0.0;
+    double interestRate = 0.0;
+    cout << "Enter the vehicle's purchase price: ";
+    cin >> price;
+    cout << "Enter the down payment for the vehicle";
+    cin >> payment;
+    cout << "Enter the sales tax on the transaction (for 8.25% tax, enter 8.25): ";
+    cin >> tax;
+    cout << "Do you have a vehicle to trade in? (y/n): ";
+    cin >> y;
+    double downPayment = 0.0;
+    double loanAmount = 0.0;
 
-    // End the program nicely
+    if (y == 'y') {
+        cout << "Enter the trade-in value of your current vehicle: ";
+        cin >> curve;
+        cout << "Enter the amount owe on your current vehicle: ";
+        cin >> amount;
+        downPayment = payment + (curve - amount);
+    } else if (y == 'n') {
+        downPayment = payment;
+    }
+
+    loanAmount = (price - downPayment) * (1 + tax / 100);
+
+    cout << "Your overall down payment is $" << downPayment << endl;
+    cout << "Your overall loan amount is $" << loanAmount << endl;
+    cout << "*****************************";
+    cout << "Enter the length of your loan..." << endl;
+    cout << " 1: 3 years" << endl;
+    cout << " 2: 4 years" << endl;
+    cout << " 3: 5 years" << endl;
+    cout << " 4: 6 years" << endl;
+    cout << "select an option: ";
+    int option = 0.0;
+    cin >> option;
+    switch (option) {
+        case 1:
+            cout << "You selected a 3 years loan with a total 36 monthly payments." << endl;
+            break;
+        case 2:
+            cout << "You selected a 4 years loan with a total 48 monthly payments." << endl;
+            break;
+        case 3:
+            cout << "You selected a 5 years loan with a total 60 monthly payments." << endl;
+            break;
+        case 4:
+            cout << "You selected a 6 years loan with a total 72 monthly payments." << endl;
+            break;
+        default:
+            cout << "enter a valid option." << endl;
+    }
+    cout << "*****************************" << endl;
+
+    double downPercent = 0.0;
+    downPercent = (downPayment / price) * 100;
+    switch (option) {
+        case 1:
+            if (downPercent < 20) {
+                interestRate = 5.65;
+            } else interestRate = 5.52;
+            break;
+        case 2:
+            if (downPercent < 20) {
+                interestRate = 5.89;
+            } else interestRate = 5.74;
+            break;
+        case 3:
+            if (downPercent < 20) {
+                interestRate = 6.11;
+            } else interestRate = 5.99;
+            break;
+        case 4:
+            if (downPercent < 20) {
+                interestRate = 6.41;
+            } else interestRate = 6.24;
+            break;
+        default:
+            cout << "enter a valid option." << endl;
+    }
+    int years = 0;
+    switch (option) {
+        case 1:
+            years = 3;
+            break;
+        case 2:
+            years = 4;
+            break;
+        case 3:
+            years = 5;
+            break;
+        case 4:
+            years = 6;
+            break;
+        default:
+            cout << "enter a valid option." << endl;
+    }
+    double numberofpayments = 0.0;
+    switch (option) {
+        case 1:
+            numberofpayments = 36;
+            break;
+        case 2:
+            numberofpayments = 48;
+            break;
+        case 3:
+            numberofpayments = 60;
+            break;
+        case 4:
+            numberofpayments = 72;
+            break;
+        default:
+            cout << "enter a valid option.";
+    }
+    double monthlyInterest = 0.0;
+    monthlyInterest = interestRate / 1200;
+    double z = 0.0;
+    z = std::pow(1 + monthlyInterest, -numberofpayments);
+    double monthlyPayment = 0.0;
+    monthlyPayment = loanAmount * monthlyInterest / (1 - z);
+    cout << "with " << downPercent << "% down and a " << years << " years loan, we can offer you an interest rate of "
+            << interestRate << "%" << endl;
+    cout << "*****************************" << endl;
+    cout << "your estimated monthly payment would be $" << monthlyPayment << " a month." << endl;
+
     return 0;
 }
