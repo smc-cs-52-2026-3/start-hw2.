@@ -35,7 +35,7 @@ int main() {
 
     cout << "Your overall down payment is $" << downPayment << endl;
     cout << "Your overall loan amount is $" << loanAmount << endl;
-    cout << "*****************************";
+    cout << "*****************************" << endl;
     cout << "Enter the length of your loan..." << endl;
     cout << " 1: 3 years" << endl;
     cout << " 2: 4 years" << endl;
@@ -46,16 +46,16 @@ int main() {
     cin >> option;
     switch (option) {
         case 1:
-            cout << "You selected a 3 years loan with a total 36 monthly payments." << endl;
+            cout << "You selected a 3 year loan with a total 36 monthly payments." << endl;
             break;
         case 2:
-            cout << "You selected a 4 years loan with a total 48 monthly payments." << endl;
+            cout << "You selected a 4 year loan with a total 48 monthly payments." << endl;
             break;
         case 3:
-            cout << "You selected a 5 years loan with a total 60 monthly payments." << endl;
+            cout << "You selected a 5 year loan with a total 60 monthly payments." << endl;
             break;
         case 4:
-            cout << "You selected a 6 years loan with a total 72 monthly payments." << endl;
+            cout << "You selected a 6 year loan with a total 72 monthly payments." << endl;
             break;
         default:
             cout << "enter a valid option." << endl;
@@ -128,10 +128,10 @@ int main() {
     z = std::pow(1 + monthlyInterest, -numberofpayments);
     double monthlyPayment = 0.0;
     monthlyPayment = loanAmount * monthlyInterest / (1 - z);
-    cout << "with " << downPercent << "% down and a " << years << " years loan, we can offer you an interest rate of "
+    cout << "with " << downPercent << "% down and a " << years << " year loan, we can offer you an interest rate of "
             << interestRate << "%" << endl;
     cout << "*****************************" << endl;
-    cout << "your estimated monthly payment would be $" << monthlyPayment << " a month." << endl;
+    cout << "Your estimated monthly payment would be $" << monthlyPayment << " a month." << endl;
 
     return 0;
 }
