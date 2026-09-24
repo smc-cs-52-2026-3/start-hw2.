@@ -46,16 +46,16 @@ int main() {
     cin >> option;
     switch (option) {
         case 1:
-            cout << "You selected a 3 year loan with a total 36 monthly payments." << endl;
+            cout << "You selected a 3 year loan with a total of 36 monthly payments." << endl;
             break;
         case 2:
-            cout << "You selected a 4 year loan with a total 48 monthly payments." << endl;
+            cout << "You selected a 4 year loan with a total of 48 monthly payments." << endl;
             break;
         case 3:
-            cout << "You selected a 5 year loan with a total 60 monthly payments." << endl;
+            cout << "You selected a 5 year loan with a total of 60 monthly payments." << endl;
             break;
         case 4:
-            cout << "You selected a 6 year loan with a total 72 monthly payments." << endl;
+            cout << "You selected a 6 year loan with a total of 72 monthly payments." << endl;
             break;
         default:
             cout << "enter a valid option." << endl;
@@ -128,7 +128,7 @@ int main() {
     z = std::pow(1 + monthlyInterest, -numberofpayments);
     double monthlyPayment = 0.0;
     monthlyPayment = loanAmount * monthlyInterest / (1 - z);
-    cout << "with " << downPercent << "% down and a " << years << " year loan, we can offer you an interest rate of "
+    cout << "With " << downPercent << "% down and a " << years << " year loan, we can offer you an interest rate of "
             << interestRate << "%" << endl;
     cout << "*****************************" << endl;
     cout << "Your estimated monthly payment would be $" << monthlyPayment << " a month." << endl;
